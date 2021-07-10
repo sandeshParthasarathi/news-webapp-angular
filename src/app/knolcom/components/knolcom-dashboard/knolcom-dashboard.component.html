@@ -1,0 +1,25 @@
+<section class="main-container">
+    <div class="main-container__side-bar">
+        <app-left-bar></app-left-bar>
+    </div>
+    <div class="main-container__dashboard">
+        <div class="main-container__dashboard__toolbar">
+            <mat-toolbar>
+                  <span class="logo-small">
+                      <img src="../../../../assets/images/logo/Logo-Full-White.svg" />
+                  </span>
+                  <button mat-icon-button class="example-icon" (click)="sideBar()">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+            </mat-toolbar>
+        </div>
+        <div class="main-container__dashboard__side-nav side-nav" >
+            <p-sidebar [(visible)]="show" dismissible='false' [showCloseIcon]="false">
+                <app-left-bar></app-left-bar>
+            </p-sidebar>
+        </div>
+        <div class="main-container__dashboard__router">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</section>

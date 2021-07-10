@@ -1,0 +1,78 @@
+@import "../../../../assets/themes/variable";
+
+.news{
+    height: 100vh;
+    overflow-y: auto;
+    
+    &__conainer{
+        margin: 30px 50px 10px 50px;
+
+        &__topics{
+            margin: 10px 25px 50px 25px;
+            @include flexPosition(flex-start);
+            flex-wrap: wrap;
+
+            &__item{
+                padding: 10px 25px;
+                background: $knolcom-light-blue;
+                color: $knolcom-primary;
+                margin: 10px 0px;
+                cursor: pointer;
+            }
+
+            // &__item:first-child{
+            //     padding-left: 20px;
+            // }
+            // &__item:last-child{
+            //     padding-right: 20px;
+            // }
+
+            &__active{
+                background: $knolcom-primary;
+                color: $knolcom-white; 
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+.recommended{
+    margin: 20px auto;
+    
+    &__header{
+        font-size: 18px;
+        color: $knolcom-primary;
+        margin: 0 25px;
+        font-weight: bold;
+
+    }
+
+    &__feeder{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+// for mobile devices
+@media only screen and (max-width: 600px) {
+    .news{
+        height: calc(100vh - 57px);
+        &__conainer{
+            margin: 10px;
+
+            &__topics{
+                margin: 0px;
+            }
+        }
+    }
+
+    .recommended{
+        &____header{
+            margin: 0px 10px;
+        }
+
+        &__feeder{
+            justify-content: center;
+        }
+    }
+}

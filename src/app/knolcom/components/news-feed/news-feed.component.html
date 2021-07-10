@@ -1,0 +1,150 @@
+<section class="news">
+    <div class="news__conainer">
+        <div class="news__conainer__topics">
+            <ng-container *ngFor="let topic of filterItem">
+                <div class="news__conainer__topics__item" (click)="filterFeed(topic)" [ngClass]="{'news__conainer__topics__active': topic.isActive }">
+                    {{topic.type}}
+                </div>
+            </ng-container>
+        </div>
+        <div class="news__conainer__feeds">
+            <div class="news__conainer__feeds__recommended">
+                <div class="recommended">
+                    <h1 class="recommended__header">Recommended</h1>
+                    <div class="recommended__feeder">
+
+                        <!-- <ng-container *ngFor="let news of news feed">
+                            <div class="news-box">
+                                <div class="news-box__image">
+                                    <img [news]="news.imgUrl" alt="img">
+                                </div>
+                                <div class="news-box__headline">
+                                    {{news.header}}
+                                </div>
+                                <div class="news-box__summary">
+                                    {{news.summary}}
+                                </div>
+                                <div class="news-box__status">
+                                    {{news.status}}
+                                </div>
+                            </div>
+                        </ng-container> -->
+
+                        <div class="news-box" (mouseover)="isHover = true" (mouseleave)="isHover = false">
+                            <div class="news-box__image">
+                                <img src="../../../../assets/images/news-img.PNG" alt="img">
+                            </div>
+                            <div class="news-box__headline">
+                                Trump aides seek to set aside division and plan for final sprint to Election Day
+                            </div>
+                            <div class="news-box__summary">
+                                The president is behind in polls, but Republicans still see a chance for a repeat of his 2016 come-from-behind victory.
+                            </div>
+                            <div class="news-box__status">
+                                36% new content
+                            </div>
+                            <div *ngIf="isHover" class="news-box__actions">
+                                <ng-container *ngFor="let item of newsAction" >
+                                    <div class="news-box__actions__item" [matTooltip]="item.name" matTooltipPosition="right">
+                                        <img [src]="item.imgUrl" />
+                                     </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <div class="news-box">
+                            <div class="news-box__image">
+                                <img src="../../../../assets/images/news-img.PNG" alt="img">
+                            </div>
+                            <div class="news-box__headline">
+                                Trump aides seek to set aside division and plan for final sprint to Election Day
+                            </div>
+                            <div class="news-box__summary">
+                                The president is behind in polls, but Republicans still see a chance for a repeat of his 2016 come-from-behind victory.
+                            </div>
+                            <div class="news-box__status">
+                                36% new content
+                            </div>
+                        </div>
+                        <div class="news-box">
+                            <div class="news-box__image">
+                                <img src="../../../../assets/images/news-img.PNG" alt="img">
+                            </div>
+                            <div class="news-box__headline">
+                                Trump aides seek to set aside division and plan for final sprint to Election Day
+                            </div>
+                            <div class="news-box__summary">
+                                The president is behind in polls, but Republicans still see a chance for a repeat of his 2016 come-from-behind victory.
+                            </div>
+                            <div class="news-box__status">
+                                36% new content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news__conainer__feeds__continue">
+                <div class="recommended">
+                    <h1 class="recommended__header">Continue</h1>
+                    <div class="recommended__feeder">
+                        <div class="news-box">
+                            <div class="news-box__image">
+                                <img src="../../../../assets/images/news-img.PNG" alt="img">
+                            </div>
+                            <div class="news-box__headline">
+                                Trump aides seek to set aside division and plan for final sprint to Election Day
+                            </div>
+                            <div class="news-box__summary">
+                                The president is behind in polls, but Republicans still see a chance for a repeat of his 2016 come-from-behind victory.
+                            </div>
+                            <div class="news-box__status">
+                                36% new content
+                            </div>
+                        </div>
+                        <div class="news-box">
+                            <div class="news-box__image">
+                                <img src="../../../../assets/images/news-img.PNG" alt="img">
+                            </div>
+                            <div class="news-box__headline">
+                                Trump aides seek to set aside division and plan for final sprint to Election Day
+                            </div>
+                            <div class="news-box__summary">
+                                The president is behind in polls, but Republicans still see a chance for a repeat of his 2016 come-from-behind victory.
+                            </div>
+                            <div class="news-box__status">
+                                36% new content
+                            </div>
+                        </div>
+                        <div class="news-box">
+                            <div class="news-box__image">
+                                <img src="../../../../assets/images/news-img.PNG" alt="img">
+                            </div>
+                            <div class="news-box__headline">
+                                Trump aides seek to set aside division and plan for final sprint to Election Day
+                            </div>
+                            <div class="news-box__summary">
+                                The president is behind in polls, but Republicans still see a chance for a repeat of his 2016 come-from-behind victory.
+                            </div>
+                            <div class="news-box__status">
+                                36% new content
+                            </div>
+                        </div>
+                        <div class="news-box">
+                            <div class="news-box__image">
+                                <img src="../../../../assets/images/news-img.PNG" alt="img">
+                            </div>
+                            <div class="news-box__headline">
+                                Trump aides seek to set aside division and plan for final sprint to Election Day
+                            </div>
+                            <div class="news-box__summary">
+                                The president is behind in polls, but Republicans still see a chance for a repeat of his 2016 come-from-behind victory.
+                            </div>
+                            <div class="news-box__status">
+                                36% new content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

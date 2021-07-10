@@ -1,0 +1,36 @@
+<section class="personalise">
+    <div class="personalise__container">
+        <div class="wrapper">
+            <div class="personalise__container__image">
+                <img src="../../../../assets/images/personalised-feed.svg" alt="image"/>
+            </div>
+            <div class="personalise__container__header"> 
+                Welcome to your dashboard
+            </div>
+            <div class="personalise__container__text"> 
+                Add your interests to personalise your feed
+            </div> 
+            <form class="personalise__container__form" [formGroup]="personaliseForm" (ngSubmit)="onSubmit(personaliseForm)">
+                <div class="knolcomFloat">
+                    <input class="knolcomFloat__input readonly-field" formControlName="topic" type="text" (keyup.enter)="onSubmit(personaliseForm)" placeholder=" " />
+                    <label class="knolcomFloat__labelText">Eg Politics</label>
+                </div>
+                <button type="submit" [disabled]="!personaliseForm.valid" mat-flat-button class="knolcom-btn">Add</button>
+            </form>
+        </div>
+        <div class="personalise__container__topics">
+            <ng-container *ngFor="let topic of personalisedTopics; let i = index" >
+                <div class="btn" (mouseover)="topic.isHover = true" (mouseleave)="topic.isHover = false">
+                    <div class="text"> {{topic.name}}</div>
+                    <div *ngIf="topic.isHover" class="close-icon">
+                        <img (click)="removeTopic(i)" src="../../../../assets/images/blue-primary/KnolCom-Web-Icons_Primary-Blue__Close.svg" />
+                    </div>
+                 </div>
+            </ng-container>
+        </div>
+        <div class="personalise__container__action">
+            <!-- <button mat-flat-button class="knolcom-btn cancel">Cancel</button> -->
+            <button mat-flat-button class="knolcom-btn">Save</button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,55 @@
+@import "../../../../assets/themes/variable";
+
+.main-container{
+    display: flex;
+
+    &__dashboard{
+        width: 100%;
+        height: 100%;
+
+        &__side-nav{
+            display: none;
+        }
+
+        &__toolbar{
+            display: none;
+
+            mat-toolbar{
+                @include flexPosition(space-between);
+                background: $knolcom-primary !important;
+                color: $knolcom-white;
+            }
+        }
+    }
+}
+
+// for mobile devices
+@media only screen and (max-width: 600px) {
+    .main-container{
+        &__side-bar{
+            display: none;
+        }
+
+        &__dashboard{
+            &__toolbar{
+                display: block;
+
+                .logo-small{
+                    width: 150px;
+                    position: relative;
+                    top: 5px;
+                    cursor: pointer;
+                }
+            }
+
+            &__side-nav{
+                display: block;
+                height: calc(100vh - 58px);
+                position: absolute;
+                z-index: 5;
+                transition: left 0.5s ease;
+            }
+        }
+        
+    }
+}

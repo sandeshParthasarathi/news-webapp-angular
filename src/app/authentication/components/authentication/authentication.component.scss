@@ -1,0 +1,61 @@
+@import "../../../../assets/themes/variable";
+
+
+.authentication{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.knolcom-info{
+    background: $knolcom-primary;
+    height: 100vh;
+
+    &__wraper{
+        margin: 20% 10%;
+        max-width: 500px;
+
+       &__knolcom-logo{
+           width: 220px;
+           height: 50px;
+
+           img{
+               width: 100%;
+               height: 100%;
+           }
+       } 
+
+       &__study-image{
+            width: 300px;
+            height: 300px;
+            margin: 10px 0px;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+       }
+
+       &__knolcom-motto{
+           color: $knolcom-white;
+           font-size: 35px;
+           margin-bottom: 20px;
+       }
+
+       &__knolcom-text{
+            color: $knolcom-white2;
+            line-height: 20px;
+       }
+    }
+}
+
+
+// for mobile devices
+@media only screen and (max-width: 600px) {
+    .authentication {
+      display: block;
+    }
+
+    .knolcom-info{
+    display: none;
+    }
+}

@@ -1,0 +1,39 @@
+<div class="side-bar">
+    <div class="side-bar__logo">
+        <a routerLink="/home/dashboard">
+            <img src="../../../../assets/images/logo/Logo-White.svg" alt="logo" />
+        </a>
+    </div>
+    <div class="side-bar__nav">
+        <ng-container *ngFor="let item of navItems" >
+            <div class="side-bar__nav__item" [matTooltip]="item.name" matTooltipPosition="right">
+                <a [routerLink]="item.route">
+                    <img [src]="item.imgUrl" />
+                </a>
+             </div>
+        </ng-container>
+        <div #setting class="side-bar__nav__item" (click)="op.toggle($event)">
+            <img src="../../../../assets/images/side-bar/manage_accounts-white.svg" />
+         </div>
+    </div>
+</div>
+<div class="left-bar">
+    <p-overlayPanel #op >
+        <ng-template pTemplate >
+            <div class="overlay">
+                <div class="overlay__setting" (click)="accountSettings()">
+                    <span class="overlay__setting__image">
+                        <img src="../../../../assets/images/blue-primary/KnolCom-Web-Icons_Primary-Blue__Settings.svg" />
+                    </span>
+                    Account Settings
+                </div>
+                <div class="overlay__setting" (click)=logout()>
+                    <span class="overlay__setting__image">
+                        <img src="../../../../assets/images/blue-primary/KnolCom-Web-Icons_Primary-Blue__Log-Out.svg"/>
+                    </span>
+                    Log out
+                </div>
+            </div>
+         </ng-template>   
+    </p-overlayPanel>
+</div>

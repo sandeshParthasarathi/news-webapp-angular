@@ -1,0 +1,201 @@
+@import "./variable";
+
+*,
+*:before,
+*:after {
+  @include prefix(box-sizing, border-box, webkit moz);
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background: $background-color;
+  font-family: $font-family;
+  font-size: 0.875rem;
+  letter-spacing: 0.25px;
+}
+
+// custom buttons
+
+.knolcom-btn{
+  background: $knolcom-primary;
+  color: $knolcom-white;
+  font-weight: normal;
+}
+
+// float input fields
+
+/* ********************** input forms starts here ***************************** */
+.knolcomFloat {
+  position: relative;
+  margin-bottom: 20px;
+
+  &__input,
+  &__select {
+    font-size: 0.875rem;
+    padding: 15px 35px 0px 15px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid $knolcom-input-border;
+    border-radius: 3px;
+
+    &--success {
+      border: 1px solid $knolcom-success !important;
+    }
+
+    &--warn {
+      border: 1px solid $knolcom-warn  !important;
+    }
+  }
+
+  &__input-logo {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+
+    img {
+      height: 24px;
+    }
+
+    .form-success{
+      height: 13px;
+    }
+  }
+
+
+  &__labelText {
+    color: $knolcom-label;
+    font-size: 0.875rem;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 17px;
+    @include prefix(transition, 0.2s ease all, webkit moz);
+  }
+
+  &__error-one {
+    position: absolute;
+    top: 55px;
+    left: 4px;
+    font-size: 11px;
+    color: $knolcom-warn;
+    line-height: 0.875rem;
+
+    &__hyperLink{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &__input:focus ~ &__labelText,
+  &__input:not(:placeholder-shown) ~ &__labelText {
+    top: 5px;
+    font-size: 12px;
+    color: $knolcom-label;
+  }
+
+  &__input:-webkit-autofill ~ &__labelText {
+    top: 5px;
+    font-size: 12px;
+    color: $knolcom-label;
+  }
+
+  &__select:focus ~ &__labelText,
+  &__select:not([value=""]):valid ~ &__labelText {
+    top: 5px;
+    font-size: 12px;
+    color: $knolcom-label;
+  }
+
+  &__textarea {
+    min-height: 30px;
+    max-height: 260px;
+    overflow: hidden;
+    overflow-x: hidden;
+    padding: 20px 15px 0px 15px;
+  }
+
+  &__anchor-link {
+    color: $knolcom-warn;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+
+// news feed box
+
+.news-box{
+  position: relative;
+  width: 270px;
+  height: 345px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 20px 25px;
+  @include prefix(box-shadow, $knolcom-card-shadow, webkit moz);
+
+  &__image{
+      width: 250px;
+      max-height: 200px;
+
+      img{
+          max-width: 250px;
+          max-height: 200px;
+      }
+  }
+
+  &__headline{
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px 0px;
+      height: 60px;
+  }
+
+  &__summary{
+      color: $knolcom-light-grey;
+      font-size: 12px;
+      margin-bottom: 10px;
+      height: 45px;
+  }
+
+  &__status{
+      font-size: 12px;
+      color: $knolcom-orange;
+      font-weight: 600;
+  }
+
+  &__actions{
+    position: absolute;
+    @include flexPosition(center);
+    flex-wrap: wrap;
+    top: 20px;
+    right: 15px;
+    padding:3px;
+    background: #ffffff7a;
+
+    &__item{
+      width: 15px;
+      @include flexPosition(center);
+      flex-wrap: wrap;
+      height: 20px;
+      margin: 0px 3px;
+    }
+  }
+}
+
+.news-box:hover{
+  @include prefix(box-shadow, $knolcom-box-shadow, webkit moz);
+}
+
+
+// for mobile devices
+@media only screen and (max-width: 600px) {
+  .news-box{
+    margin: 20px 10px;
+  }
+
+}

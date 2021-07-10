@@ -1,0 +1,119 @@
+@import "../../../../assets/themes/variable";
+
+.personalise{
+    @include flexPosition(center);
+    flex-direction: column;
+    flex-wrap: wrap;
+    // position: relative;
+    height: 100vh;
+    overflow-y: auto;
+    
+    &__container{
+        flex-direction: column;
+
+        &__image{
+            width: 250px;
+            height: 250px;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        &__header{
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        &__text{
+            color: $knolcom-light-grey;
+            font-size: 16px;
+            margin: 15px;
+        }
+
+        &__form{
+            width: 400px;
+            margin: 20px 0px;
+            display: inline-grid;
+        }
+
+        &__topics{
+            @include flexPosition(center);
+            flex-wrap: wrap;
+            
+            .btn{
+                @include flexPosition(center);
+                position: relative;
+                height: 35px;
+                background: #045ca42e;
+                padding: 10px 20px;
+                border-radius: 3px;
+                margin: 10px;
+                color: #666666;
+                color: $knolcom-dark-grey;
+            }
+
+            .text{
+                position: relative;
+                top: 1px;
+            }
+
+            .close-icon{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                z-index: 1;
+
+                img{
+                    border: 1px solid;
+                    border-radius: 50%;
+                    width: 13px;
+                    background: $knolcom-white;
+                    cursor: pointer;
+                }
+                
+            }
+        }
+
+        &__action{
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px;
+            
+            .cancel{
+                background-color: $knolcom-white;
+                border: 1px solid $knolcom-dark-grey;
+                color: $knolcom-black;
+                margin-right: 20px;
+            }
+        }
+    }
+} 
+
+.wrapper{
+    @include flexPosition(center);
+    flex-direction: column;
+}
+
+// for mobile devices
+@media only screen and (max-width: 600px) {
+    .personalise{
+        height: calc(100vh - 60px);
+        
+        &__container{
+            margin: 10px;
+            text-align: center;
+
+            &__image{
+                width: 200px;
+                height: 200px;
+            }
+
+            
+            &__form{
+                width: 300px;
+            }
+
+        }
+    }
+}

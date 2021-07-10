@@ -1,0 +1,49 @@
+<section class="signup">
+    <div class="signup__action">
+        <div class="knolcom-logo">
+            <img src="../../../../assets/images/logo/Logo-Blue.svg" />
+        </div>
+        <button mat-flat-button class="knolcom-btn" (click)="navigateToSignin()">Sign in</button>
+    </div>
+    <div class="signup__form">
+        <div class="signup__form__text">Welcome, Create your account</div>
+        <div class="signup__form__google-signin">
+            <div class="signup__form__google-signin__logo">
+                <img src="../../../../assets/images/login/google-icon.svg" width="25" height="25">
+            </div>
+            <div class="signup__form__google-signin__text" (click)="googleSignin()">Sign in with Google</div>
+        </div>
+        <div class="signup__form__horizontal"><span> OR </span></div>
+        <form class="signup__form__mail-signup" [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
+            <div class="knolcomFloat">
+                <input class="knolcomFloat__input readonly-field" formControlName="email" type="text" placeholder=" " />
+                <label class="knolcomFloat__labelText">Email</label>
+                <div class="knolcomFloat__error-one"
+                *ngIf="signupForm.controls.email.touched && signupForm.controls.email.value && signupForm.controls.email.hasError('pattern')">
+                Invalid email address.
+              </div>
+            </div>
+            <div class="knolcomFloat">
+                <input class="knolcomFloat__input readonly-field" formControlName="password" type="password" placeholder=" " [type]="showConfirm ? 'text' : 'password'" />
+                <label class="knolcomFloat__labelText">Create Password</label>
+                <span *ngIf="signupForm.controls.password.value" class="knolcomFloat__input-logo" (click)="confirmPasswordVissible()">
+
+                    <!-- <span *ngIf="showConfirm" class="material-icons">visibility</span>
+                    <span *ngIf="!showConfirm" class="material-icons">visibility_off</span> -->
+                    <img *ngIf="showConfirm"  src="../../../../assets/images/login/visibility-black.svg" alt="view">
+                    <img *ngIf="!showConfirm" src="../../../../assets/images/login/visibility_off.svg" alt="hide">
+                </span>
+                <div class="knolcomFloat__error-one" *ngIf="signupForm.controls.password.hasError('pattern')">
+                    Password must be 8-12 characters and include at least one letter, one number and one special character (@$!%*#?&)
+                  </div>
+            </div>
+            <div class="submit-btn">
+                <button type="submit" [disabled]="!signupForm.valid" mat-flat-button class="knolcom-btn">Sign Up</button>
+            </div>
+        </form>
+        <div class="signup__form__signin-link">
+            Already have an account?
+            <span (click)="navigateToSignin()">Sign in</span>
+        </div>
+    </div>
+</section>
